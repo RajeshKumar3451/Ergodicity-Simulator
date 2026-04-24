@@ -97,36 +97,44 @@ streamlit run app.py
 
 The Kelly Criterion determines the optimal fraction of wealth to allocate in order to maximize long-term logarithmic growth.
 
-[
-f^* = \frac{\mu}{\sigma^2}
-]
+**Formula:**
+$f^* = \frac{\mu}{\sigma^2}$
+
+---
 
 ### Where:
 
-* ( f^* ): Optimal fraction of wealth to invest (or risk)
-* ( \mu ): Expected return (drift)
-* ( \sigma ): Volatility (standard deviation of returns)
+* $f^*$: Optimal fraction of wealth to invest (or risk)
+* $\mu$: Expected return (drift)
+* $\sigma$: Volatility (standard deviation of returns)
 
 ---
 
-### 📘 Interpretation
+## 📘 Alternative (Discrete Form)
+
+**Formula:**
+$f^* = \frac{bp - q}{b}$
+or
+$f^* = \frac{W - (1 - W)}{R}$
+
+---
+
+### Where:
+
+* $p$: Probability of winning
+* $q = 1 - p$: Probability of losing
+* $b$: Net odds received on the wager
+* $W$: Win probability
+* $R$: Win/Loss ratio
+
+---
+
+## 📊 Interpretation
 
 * The optimal allocation increases with higher expected returns
 * The optimal allocation decreases with higher volatility
-* Overbetting (( f > f^* )) leads to increased risk of ruin
-* Underbetting (( f < f^* )) results in suboptimal growth
-
----
-
-### ⚠️ Important Insight
-
-The Kelly Criterion assumes:
-
-* Repeated independent bets
-* Known probability distribution of returns
-* No external constraints (e.g., liquidity, leverage limits)
-
-In real-world systems, practitioners often use **fractional Kelly** (e.g., ( \tfrac{1}{2} f^* )) to reduce risk.
+* Overbetting ($f > f^*$) increases risk of ruin
+* Underbetting ($f < f^*$) leads to suboptimal growth
 
 ---
 
