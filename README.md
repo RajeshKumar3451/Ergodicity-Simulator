@@ -84,23 +84,49 @@ python -m pip install -r requirements.txt
 ```bash
 streamlit run app.py
 ```
+## 📊 Key Insights
 
+- High volatility environments can destroy individual wealth despite positive expected returns  
+- Ensemble averages are misleading in non-ergodic systems  
+- Kelly Criterion significantly improves survival probability  
+- Risk management is more important than return maximization  
+  
 ---
 
-## 🧪 Key Concepts Demonstrated
+## 📈 Kelly Criterion
 
-### 📈 The Kelly Criterion
-
-The simulator calculates the optimal fraction of wealth to risk:
+The Kelly Criterion determines the optimal fraction of wealth to allocate in order to maximize long-term logarithmic growth.
 
 [
 f^* = \frac{\mu}{\sigma^2}
 ]
 
-Where:
+### Where:
 
-* ( \mu ) = expected return
-* ( \sigma ) = volatility
+* ( f^* ): Optimal fraction of wealth to invest (or risk)
+* ( \mu ): Expected return (drift)
+* ( \sigma ): Volatility (standard deviation of returns)
+
+---
+
+### 📘 Interpretation
+
+* The optimal allocation increases with higher expected returns
+* The optimal allocation decreases with higher volatility
+* Overbetting (( f > f^* )) leads to increased risk of ruin
+* Underbetting (( f < f^* )) results in suboptimal growth
+
+---
+
+### ⚠️ Important Insight
+
+The Kelly Criterion assumes:
+
+* Repeated independent bets
+* Known probability distribution of returns
+* No external constraints (e.g., liquidity, leverage limits)
+
+In real-world systems, practitioners often use **fractional Kelly** (e.g., ( \tfrac{1}{2} f^* )) to reduce risk.
 
 ---
 
