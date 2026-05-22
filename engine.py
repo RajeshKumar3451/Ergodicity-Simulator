@@ -20,11 +20,9 @@ class ErgodicityEngine:
         f = self.calculate_kelly() if use_kelly else 1.0
         
         for t in range(1, self.n_steps):
-            # Geometric Brownian Motion simulation
             shocks = np.random.normal(self.edge, self.volatility, self.n_agents)
             wealth[t] = wealth[t-1] * (1 + (f * shocks))
             
-            # Reset Mechanism (Insurance/Safety Net)
             wealth[t] = np.where(wealth[t] < self.reset_threshold, 1.0, wealth[t])
             
         return wealth, f
